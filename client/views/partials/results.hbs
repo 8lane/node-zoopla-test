@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sample Site</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <style>
-        body { padding-top:50px; }
-    </style>
-</head>
-<body>
+<h1 class="sr-only">Search Results</h1>
+<small>{{searchResults.result_count}} results found</small>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Search Results</h1>
-            {{#each searchResults.listing}}
-              <span>{{agent_address}}</span><br>
-            {{/each}}
-
-        </div>
-    </div>
-
-</body>
-</html>
+{{#each searchResults.listing as | result index | }}
+  <div class="results__media">
+    <img src="{{result.image_url}}" alt="{{result.num_bedrooms}} bed {{result.property_type}} for sale" />
+  </div>
+  <div class="results__meta">
+    <h2 class="results__title">{{{propertyTitleHelper result}}}</h2>
+    <span class="results__price">{{{priceHelper result.price}}}</span>
+    <p class="results__desc">{{result.description}}</p>
+  </div>
+  <div class="results__agents-info">
+    <img class="results__agents-logo" src="{{result.agent_logo}}" alt="{{result.agent_name}}" />
+    <h3 class="results__agents-name">{{result.agent_name}}</h3>
+    <address class="results__agents-address">{{{agentAddressHelper result}}}</address>
+    <a class="results__agents-phone" href="tel:{{result.agent_phone}}">{{result.agent_phone}}</a>
+  </div>
+{{/each}}

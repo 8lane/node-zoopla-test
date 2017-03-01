@@ -1,20 +1,15 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
 var request = require('request');
 var path = require('path');
-var http = require('http');
 var hbs = require('express-hbs');
+var hbsHelpers = require(__dirname + '/handlebars-helpers');
 
 const CLIENT_PATH = path.resolve(__dirname, '..' + '/client');
-const VIEWS_PATH = CLIENT_PATH + '/views'
+const VIEWS_PATH = CLIENT_PATH + '/views';
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.set('views', path.resolve(__dirname, '..' + '/client/views/'));
-// app.engine('html', require('ejs').renderFile);
-
-app.set('view engine', 'hbs'); /* Set view engine */
+/* Set view engine */
+app.set('view engine', 'hbs');
 
 /* Configure view engine */
 app.engine('hbs', hbs.express4({
@@ -50,7 +45,7 @@ function handleSearch(req, res) {
   }
 
   function onNoResults() {
-    res.render('partials/no-results');
+    res.render('partials/search', { noResultsFound: true });
   }
 }
 
@@ -72,13 +67,12 @@ function fetchResults(searchTerm) {
 
 /* Results Route */
 app.get('/results', function(req, res) {
-    console.log('RESULTS: ', app.get('searchResults'));
-    res.render('partials/results', { searchResults: app.get('searchResults') });
+  res.render('partials/results', { searchResults: app.get('searchResults') });
 });
 
 /* API Route */
 app.get('/api/search', function(req, res) {
-    res.sendFile(path.resolve('./server/data/data.json'));
+  res.sendFile(path.resolve('./server/data/data.json'));
 });
 
 /* Default Route */
