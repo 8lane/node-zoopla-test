@@ -7,8 +7,7 @@ hbs.registerHelper("propertyTitleHelper", (result) => `${result.num_bedrooms} be
 hbs.registerHelper("agentAddressHelper", (result) => `${result.agent_address}, ${result.agent_postcode}`);
 
 /* Format proerty prices */
-hbs.registerHelper("priceHelper", (val) => {
-  let price = parseInt(val);
+hbs.registerHelper("priceHelper", (price) => {
   if(!isNaN(parseFloat(price)) && isFinite(price)) { /* http://stackoverflow.com/q/18082/1010691 */
     let formattedPrice = '£' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); /* http://stackoverflow.com/a/2901298/1010691 */
     return formattedPrice;
