@@ -1,0 +1,28 @@
+{
+  "name": "zoopla-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tctc91/zoopla-test.git"
+  },
+  "author": "Tom Christian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tctc91/zoopla-test/issues"
+  },
+  "homepage": "https://github.com/tctc91/zoopla-test#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "express-hbs": "^1.0.4",
+    "gulp-sass": "^3.1.0",
+    "request": "^2.79.0"
+  }
+}
