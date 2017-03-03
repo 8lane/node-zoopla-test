@@ -1,4 +1,4 @@
-var app = require('./index');
+const app = require('./index');
 
 app.listen(8080, function (error) {
   if (error) {

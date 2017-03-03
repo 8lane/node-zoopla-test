@@ -1,7 +1,7 @@
-var router = require('express').Router();
-var app = require('../index');
-var config = require('../config');
-var request = require('request');
+const router = require('express').Router();
+const app = require('../index');
+const config = require('../config');
+const request = require('request');
 
 function handleSearch(req, res) {
   let searchTerm = req.query.searchValue;

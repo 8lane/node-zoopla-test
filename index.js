@@ -1,8 +1,8 @@
-var express = require('express');
-var app = module.exports = express();
-var path = require('path');
-var hbs = require('express-hbs');
-var hbsHelpers = require('./helpers/handlebars-helpers');
+const express = require('express');
+const app = module.exports = express();
+const path = require('path');
+const hbs = require('express-hbs');
+const hbsHelpers = require('./helpers/handlebars-helpers');
 
 /* Set view engine */
 app.set('view engine', 'hbs');

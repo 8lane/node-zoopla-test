@@ -1,4 +1,4 @@
-var hbs = require('express-hbs');
+const hbs = require('express-hbs');
 
 /* Format property titles */
 hbs.registerHelper("propertyTitleHelper", (result) => `${result.num_bedrooms} bedroom ${result.property_type} for sale`);

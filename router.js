@@ -1,8 +1,8 @@
-var express = require('express')
-var join = require('path').join;
-var config = require('./config');
+const express = require('express')
+const join = require('path').join;
+const config = require('./config');
 
-var router = new express.Router()
+const router = new express.Router()
 
 function apiRoute(req, res) {
   res.sendFile(__dirname + '/data/data.json');
