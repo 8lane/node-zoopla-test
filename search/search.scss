@@ -1,0 +1,47 @@
+/* Search component */
+
+.zp-search {
+  &__form {
+    margin-top: 16px;
+
+    @include respond-to(md) {
+      margin-top: $spacing-md;
+    }
+
+    @include respond-to(lg) {
+      margin-top: $spacing-lg;
+    }
+  }
+
+
+  &__input {
+    padding: .61rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+
+    &:focus {
+      border-color: $brand-primary;
+    }
+
+    @include respond-to(md) {
+      min-width: 220px;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: .7rem 1.5rem;
+    font-size: 1rem;
+    background: $brand-primary;
+    border: 0;
+    color: white;
+  }
+}

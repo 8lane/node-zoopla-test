@@ -1,10 +1,13 @@
-<h1>Seach Form</h1>
+<section class="zp-search">
+  {{#if noResultsFound}}
+    <h1 class="zp-title">No results found</h1>
+    <h2><small>Enter another location and search again.</small></h3>
+  {{else}}
+    <h1 class="zp-title">Search for houses and flats for sale across the UK</h1>
+  {{/if}}
 
-{{#if noResultsFound}}
-  <h3>No results found</h3>
-{{/if}}
-
-<form action="/search" method="GET" class="form-inline">
-  <input type="search" class="form-control" id="searchValue" name="searchValue" placeholder="Search...">
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <form action="/search" method="GET" class="form-inline zp-search__form">
+    <input type="search" class="zp-search__input" id="searchValue" name="searchValue" placeholder="Enter a postcode e.g. N11">
+    <button type="submit" class="zp-search__btn">Search</button>
+  </form>
+</section>

@@ -453,44 +453,41 @@ th {
   .col-lg-1-5 {
     width: 20%; } }
 
-body {
-  font-size: 16px; }
+/* Search component */
+.zp-search__form {
+  margin-top: 16px; }
+  @media (min-width: 768px) {
+    .zp-search__form {
+      margin-top: 24px; } }
   @media (min-width: 1024px) {
-    body {
-      font-size: 120%; } }
+    .zp-search__form {
+      margin-top: 32px; } }
 
-p {
-  margin: 0; }
+.zp-search__input {
+  padding: .61rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ccc; }
+  .zp-search__input:focus {
+    border-color: tomato; }
+  @media (min-width: 768px) {
+    .zp-search__input {
+      min-width: 220px; } }
 
-h1, h2, h3, h4 {
-  margin: 0;
-  font-weight: normal; }
-
-h1 {
-  font-size: 1.6rem; }
-
-h2 {
-  font-size: 1.3rem; }
-
-h3 {
-  font-size: 1.2rem; }
-
-h4 {
-  font-size: 1.1rem; }
-
-img {
-  max-width: 100%; }
-
-/* Bootstrap accessiblity class */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
+.zp-search__btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: .7rem 1.5rem;
+  font-size: 1rem;
+  background: tomato;
+  border: 0;
+  color: white; }
 
 /* Search results component */
 .zp-results__count {
@@ -538,3 +535,51 @@ img {
 
 .zp-results__agents-logo {
   vertical-align: middle; }
+
+body {
+  font-size: 16px; }
+  @media (min-width: 1024px) {
+    body {
+      font-size: 120%; } }
+
+p {
+  margin: 0; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal; }
+
+h1 {
+  font-size: 1.6rem; }
+
+h2 {
+  font-size: 1.3rem; }
+
+h3 {
+  font-size: 1.2rem; }
+
+h4 {
+  font-size: 1.1rem; }
+
+img {
+  max-width: 100%; }
+
+/* Bootstrap accessiblity class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.zp-title {
+  margin-top: 16px; }
+  @media (min-width: 768px) {
+    .zp-title {
+      margin-top: 24px; } }
+  @media (min-width: 1024px) {
+    .zp-title {
+      margin-top: 32px; } }
