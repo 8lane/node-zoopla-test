@@ -1,0 +1,24 @@
+$brand-primary:         tomato;
+
+$app-min-width:         320px;
+
+$spacing-sm:            16px;
+$spacing-md:            24px;
+$spacing-lg:            32px;
+$spacing-xl:            48px;
+$spacing-xll:           64px;
+
+$zp-breakpoints: (
+  sm: (
+    width: 0,
+    gutter: $spacing-sm
+  ),
+  md: (
+    width: 768px,
+    gutter: $spacing-md
+  ),
+  lg: (
+    width: 1024px,
+    gutter: $spacing-lg
+  )
+);

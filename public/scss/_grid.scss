@@ -1,0 +1,77 @@
+/* Bootstrap inspired grid using flexbox */
+$grid-gutter-width: $spacing-sm;
+
+/* Main container */
+.container {
+  min-width: $app-min-width;
+  margin-left: $grid-gutter-width / 2;
+  margin-right: $grid-gutter-width / 2;
+}
+
+@each $breakpoint, $value in $zp-breakpoints {
+  @media(min-width: map-get($value, width)) {
+    .container {
+      margin-left: map-get($value, gutter);
+      margin-right: map-get($value, gutter);
+    }
+  }
+}
+
+/* Grid */
+.grid {
+  position: relative;
+
+  /* Setup mobile first flexbox grid (starting at medium breakpoint) */
+  @include respond-to(md) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Bootstrap style negative margin offset for each breakpoint */
+  @each $breakpoint, $value in $zp-breakpoints {
+    @media(min-width: map-get($value, width)) {
+      margin-left: -#{map-get($value, gutter) / 2};
+      margin-right: -#{map-get($value, gutter) / 2};
+    }
+  }
+}
+
+/* Setup columns */
+.col {
+  box-sizing: border-box;
+
+  &.col-sm-full-width {
+    width: 100%;
+  }
+
+  /* Column gutters per breakpoint */
+  @each $breakpoint, $value in $zp-breakpoints {
+    @media(min-width: map-get($value, width)) {
+      padding-left: map-get($value, gutter) / 2;
+      padding-right: map-get($value, gutter) / 2;
+    }
+  }
+}
+
+@include respond-to(md) {
+  /* Medium bp columns */
+  .col-md-1-2 {
+    width: 50%;
+  }
+}
+
+@include respond-to(lg) {
+  /* Large bp columns */
+  .col-lg-2-5 {
+    width: 40%;
+  }
+
+  .col-lg-1-5 {
+    width: 20%;
+  }
+}

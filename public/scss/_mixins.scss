@@ -1,0 +1,11 @@
+/* Media query mixin */
+@mixin respond-to($breakpoint) {
+  @if map-has-key($zp-breakpoints, $breakpoint) {
+    $breakpoint-map: map-get($zp-breakpoints, $breakpoint);
+    @media (min-width: #{map-get($breakpoint-map, width)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint not found';
+  }
+}

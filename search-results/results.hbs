@@ -1,19 +1,23 @@
-<h1 class="sr-only">Search Results</h1>
-<small>{{searchResults.result_count}} results found</small>
+<section class="zp-results">
+  <h1 class="sr-only">Search Results</h1>
+  <p class="zp-results__count">{{searchResults.result_count}} results found</p>
 
-{{#each searchResults.listing as | result index | }}
-  <div class="results__media">
-    <img src="{{result.image_url}}" alt="{{result.num_bedrooms}} bed {{result.property_type}} for sale" />
-  </div>
-  <div class="results__meta">
-    <h2 class="results__title">{{{propertyTitleHelper result}}}</h2>
-    <span class="results__price">{{{priceHelper result.price}}}</span>
-    <p class="results__desc">{{result.description}}</p>
-  </div>
-  <div class="results__agents-info">
-    <img class="results__agents-logo" src="{{result.agent_logo}}" alt="{{result.agent_name}}" />
-    <h3 class="results__agents-name">{{result.agent_name}}</h3>
-    <address class="results__agents-address">{{{agentAddressHelper result}}}</address>
-    <a class="results__agents-phone" href="tel:{{result.agent_phone}}">{{result.agent_phone}}</a>
-  </div>
-{{/each}}
+  {{#each searchResults.listing as | result index | }}
+    <div class="zp-results__listing grid">
+      <div class="results__media col col-md-1-2 col-lg-2-5">
+        <img class="results__media-img" src="{{result.image_url}}" alt="{{{propertyTitleHelper result}}}" />
+      </div>
+      <div class="results__meta col col-md-1-2 col-lg-2-5">
+        <h2 class="results__title">{{{propertyTitleHelper result}}}</h2>
+        <span class="results__price">{{{priceHelper result.price}}}</span>
+        <p class="results__desc">{{result.description}}</p>
+      </div>
+      <div class="results__agents-info col col-md-full-width col-lg-1-5">
+        <img class="results__agents-logo" src="{{result.agent_logo}}" alt="{{result.agent_name}}" />
+        <h3 class="results__agents-name">{{result.agent_name}}</h3>
+        <address class="results__agents-address">{{{agentAddressHelper result}}}</address>
+        <a class="results__agents-phone" href="tel:{{result.agent_phone}}">{{result.agent_phone}}</a>
+      </div>
+    </div>
+  {{/each}}
+</section>
