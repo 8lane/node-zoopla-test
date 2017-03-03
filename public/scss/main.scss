@@ -44,17 +44,7 @@ img {
   border: 0;
 }
 
-.results {
-  &__media-img {
-    width: 100%;
-  }
-
-  &__price {
-    color: $brand-primary;
-    font-size: 1.6rem;
-  }
-}
-
+/* Search results component */
 .zp-results {
   &__count {
     margin-top: 16px;
@@ -83,5 +73,42 @@ img {
         margin-bottom: $spacing-xll;
       }
     }
+  }
+
+  &__media-img {
+    width: 100%;
+  }
+
+  &__price {
+    color: $brand-primary;
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    &__agents-info {
+      margin-top: $spacing-md;
+    }
+  }
+
+  &__agents-logo,
+  &__agents-name,
+  &__agents-address {
+    margin-right: $spacing-sm;
+  }
+
+  &__agents-name,
+  &__agents-address,
+  &__agents-phone {
+    font-size: inherit;
+    font-style: normal;
+
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__agents-logo {
+    vertical-align: middle;
   }
 }

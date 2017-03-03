@@ -378,7 +378,7 @@ th {
   margin-left: 8px;
   margin-right: 8px; }
 
-@media (min-width: 0) {
+@media (min-width: 0px) {
   .container {
     margin-left: 16px;
     margin-right: 16px; } }
@@ -409,7 +409,7 @@ th {
             flex-grow: 1;
         -ms-flex-negative: 0;
             flex-shrink: 0; } }
-  @media (min-width: 0) {
+  @media (min-width: 0px) {
     .grid {
       margin-left: -8px;
       margin-right: -8px; } }
@@ -428,7 +428,7 @@ th {
   /* Column gutters per breakpoint */ }
   .col.col-sm-full-width {
     width: 100%; }
-  @media (min-width: 0) {
+  @media (min-width: 0px) {
     .col {
       padding-left: 8px;
       padding-right: 8px; } }
@@ -492,13 +492,7 @@ img {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
-.results__media-img {
-  width: 100%; }
-
-.results__price {
-  color: tomato;
-  font-size: 1.6rem; }
-
+/* Search results component */
 .zp-results__count {
   margin-top: 16px;
   margin-bottom: 16px; }
@@ -519,3 +513,28 @@ img {
   @media (min-width: 1024px) {
     .zp-results__listing:not(:last-child) {
       margin-bottom: 64px; } }
+
+.zp-results__media-img {
+  width: 100%; }
+
+.zp-results__price {
+  color: tomato;
+  font-size: 1.6rem; }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .zp-results__agents-info {
+    margin-top: 24px; } }
+
+.zp-results__agents-logo, .zp-results__agents-name, .zp-results__agents-address {
+  margin-right: 16px; }
+
+.zp-results__agents-name, .zp-results__agents-address, .zp-results__agents-phone {
+  font-size: inherit;
+  font-style: normal; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .zp-results__agents-name, .zp-results__agents-address, .zp-results__agents-phone {
+      display: inline-block;
+      vertical-align: middle; } }
+
+.zp-results__agents-logo {
+  vertical-align: middle; }
