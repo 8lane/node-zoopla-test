@@ -1,2 +1,0 @@
-mocha "search/*.spec.js"
---recursive

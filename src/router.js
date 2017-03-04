@@ -15,4 +15,4 @@ function defaultRoute(req, res) {
 router.get('/api/search', apiRoute);
 router.get('*', defaultRoute);
 
-module.exports = router
+module.exports = router;
