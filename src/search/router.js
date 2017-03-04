@@ -4,6 +4,6 @@ const config = require('../config');
 const request = require('request');
 const controller = require('../controllers/search');
 
-router.get('/', controller.search);
+router.get('/', controller.init);
 
 module.exports = router;

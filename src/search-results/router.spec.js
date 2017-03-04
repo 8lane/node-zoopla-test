@@ -16,11 +16,10 @@ var res = {
 };
 
 describe('Search results page', function() {
-  it('should render results', function(done) {
+  it('should render results', function() {
     let data = { searchResults: require('../data/data.json') }; // Arrange
     SearchRouter.index(req, res); // Act
     expect(res.viewData).to.eql(data); // Assert
-    done();
   });
 
   it('should display', function(done) {
