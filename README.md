@@ -1,6 +1,7 @@
 # Setup instructions
 - npm install
 - npm start
+- browse by visiting localhost:8080/search
 
 ## Run Tests
 - npm test
