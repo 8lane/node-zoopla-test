@@ -30,11 +30,9 @@ describe('Handlebars Helpers', function() {
   describe('Price formatter', function() {
     it('should only format a number', function() {
       let num = 123;
-      expect(helpers.priceHelper(num)).to.not.be.an('undefined');
-    });
-
-    it('should not format anything other than a number', function() {
       let string = 'hey123';
+
+      expect(helpers.priceHelper(num)).to.not.be.an('undefined');
       expect(helpers.priceHelper(string)).to.be.an('undefined');
     });
 

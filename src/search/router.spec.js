@@ -4,10 +4,8 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const app = require('../index');
-const SearchComponent = require("./router");
 
 describe('Search page', function() {
-
   it('should display the page', function(done) {
     request(app)
     .get('/search')

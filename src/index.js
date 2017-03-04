@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const hbs = require('express-hbs');
 const hbsHelpers = require('./helpers/handlebars-helpers');
+const config = require('./config');
 
 /* Set view engine */
 app.set('view engine', 'hbs');

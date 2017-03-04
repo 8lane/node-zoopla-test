@@ -9,7 +9,7 @@ function apiRoute(req, res) {
 }
 
 function defaultRoute(req, res) {
-  res.render(config.paths.viewsDir + '/404');
+  res.render(config.paths.viewsDir + '/404', { title: "Requested page not found" });
 }
 
 router.get('/api/search', apiRoute);
