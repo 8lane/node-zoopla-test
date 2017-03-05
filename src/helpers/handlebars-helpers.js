@@ -19,5 +19,5 @@ module.exports.priceHelper = function(price) {
 };
 
 hbs.registerHelper("propertyTitleHelper", exports.propertyTitleHelper);
-hbs.registerHelper("agentAddressHelper", exports.propertyTitleHelper);
+hbs.registerHelper("agentAddressHelper", exports.agentAddressHelper);
 hbs.registerHelper("priceHelper", exports.priceHelper);
